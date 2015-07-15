@@ -10,7 +10,7 @@ $(document).ready(function(){
 			alert("Form Submitted");
 		}
 	});
-	$("#applicationForm").validate({
+	$("#applicationForm33").validate({
     
         rules: {
             firstname: "required",

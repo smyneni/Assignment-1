@@ -1,17 +1,39 @@
-#body {
-	
-
-}
-
 #applicationForm label.error {
   color:Red;
   font-weight:bold;
 }
-
 .formLabel {
   width:100px;
   text-align:left;
   float:left;
   padding-right:10px;
   font-weight:bold;
+}
+#test {
+  margin:1% auto 1% auto;
+  overflow:auto;
+  background: white;
+}
+.indexStyle {
+  margin:8% auto 8% auto;
+  border:1px solid #1E90FF;
+  width:50%;
+  overflow:auto;
+  background: white;
+  box-shadow: 10px 10px 10px grey;
+  border-radius: 15px 15px 15px 15px;
+}
+.homeStyle {
+  height: 200px;
+}
+td, th {
+  padding: 10px;
+}
+.vertical-center {
+  min-height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

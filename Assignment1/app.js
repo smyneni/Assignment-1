@@ -1,61 +1,30 @@
-$(document).ready(function(){
-    $("input").focus(function(){
-        $(this).css("background-color", "#cccccc");
-    });
-    $("input").blur(function(){
-        $(this).css("background-color", "#ffffff");
-    });
-	$("#submit").click(function(){
-		if ($("#applicationForm").valid()){
-			alert("Form Submitted");
-		}
-	});
-	$("#applicationForm").validate({
-    
-        rules: {
-            firstname: "required",
-            lastname: "required",
-            email: {
-                required: true,
-                email: true
-            },
-            phone: {
-                required: true,
-                minlength: 10
-            },
-			zipcode: {
-				required: false,
-				number:true,
-				minlength: 5
-			},
-        },
-        
-        messages: {
-            firstname: "Please enter your first name",
-            lastname: "Please enter your last name",
-            password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 10 characters long"
-            },
-            email: "Please enter a valid email address",
-			zipcode: "Please enter a valid Zip Code",
-        },
-        
-        submitHandler: function(form) {
-            form.submit();
+var app = angular.module('myApp', []);
+
+app.controller('validateCtrl', function($scope, $location, $locationProvider) {
+
+    $scope.data = false;
+    $scope.form = true;
+    $scope.toggle = function(){
+        if($scope.applicationForm.$valid){
+            $scope.form =  false;
+            $scope.data =  true;
         }
-    });
-	
+    };
+    $locationProvider.html5Mode(true);
+
+    $scope.go = function ( path ) {
+        /*$location.path( path).replace();
+        if(!$scope.$$phase) $scope.$apply();
+        //$state.go(path); $location.path(path);
+        $location.path('/index').replace();
+        $scope.$apply();*/
+
+            $location.path(path).replace();
+
+    };
+
 });
 
 
-function UserData(){
-	var firstName = "";
-	var lastName = "";
-	var email = "";
-	var phoneNumber = "";
-	var city = "";
-	var zipCode = "";
 
-}
    
